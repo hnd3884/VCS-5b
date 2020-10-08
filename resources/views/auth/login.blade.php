@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../css/login.css" rel="stylesheet">
-    <title>LOGIN</title>
+    <title>Login</title>
 </head>
 
 <body class="bg-gradient-primary">
@@ -15,15 +15,14 @@
             <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
             </div>
+
+            @if($errors->any())
             <p class="text-danger">
-                <?php
-                if (!empty($_SESSION["message"])) {
-                    echo $_SESSION["message"];
-                    unset($_SESSION["message"]);
-                }
-                ?>
+                {{$errors->first()}}
             </p>
-            <form method="POST" action="{{ route('login') }}">
+            @endif
+
+            <form method="POST" action="/login">
                 @csrf
 
                 <div class="form-group">

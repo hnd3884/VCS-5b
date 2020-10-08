@@ -231,4 +231,7 @@ return [
 
     ],
 
+    'assignment_path' => '',
+    'challenge_path' => '',
+
 ];
